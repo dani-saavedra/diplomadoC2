@@ -9,7 +9,7 @@ import lombok.Data;
 @Entity
 @Table(name = "cuenta")
 @Data
-public class CuentaORM {
+public class CuentaORM
 
     @Id
     String cuenta;
