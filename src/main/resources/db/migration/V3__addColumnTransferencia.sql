@@ -1,0 +1,1 @@
+ALTER TABLE transferencia add ip varchar(30);
