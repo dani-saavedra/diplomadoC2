@@ -9,6 +9,8 @@ jobs:
     steps:
       - uses: actions/checkout@v4
         name: Descargando el Repo
+        with:
+          fetch-depth: 0
       - name: Instalar Java
         uses: actions/setup-java@v4
         with:
