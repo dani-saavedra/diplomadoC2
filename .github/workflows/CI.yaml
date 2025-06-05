@@ -2,6 +2,8 @@ name: CI
 on:
   pull_request:
     branches: [ 'main','develop','release','master','xxx' ]
+  push:
+    branches: [ 'main' ]
 
 jobs:
   build:
