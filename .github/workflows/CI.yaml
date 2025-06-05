@@ -18,3 +18,8 @@ jobs:
         uses: gradle/actions/setup-gradle@v3
       - name: Build with Gradle
         run: ./gradlew build
+      - name: SonarQube Scan
+        uses: SonarSource/sonarqube-scan-action@v5.2.0 # Ex: v4.1.0, See the latest version at https://github.com/marketplace/actions/official-sonarqube-scan
+        env:
+          SONAR_TOKEN: sqa_4a4ae29e1505776d1b336ef2d3ec71f6076bdac6
+          SONAR_HOST_URL: http://217.76.49.138:9000
