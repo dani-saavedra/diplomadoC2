@@ -40,7 +40,7 @@ public class SaludoController {
 
     @GetMapping("/estudiantes")
     public List<Estudiante> consultarEstudiantes() {
-        log.info("Consultando estudiantes");
+        log.info("Consultando estudiantes..");
         return estudianteJPA.findAll();
     }
 
