@@ -1,10 +1,7 @@
 name: CI
 on:
-  pull_request:
-    branches: [ 'main','develop','release','master','xxx' ]
   push:
     branches: [ 'main' ]
-
 jobs:
   build:
     runs-on: ubuntu-latest
@@ -22,8 +19,12 @@ jobs:
         uses: gradle/actions/setup-gradle@v3
       - name: Build with Gradle
         run: ./gradlew build
-      - name: SonarQube Scan
-        uses: kitabisa/sonarqube-action@v1.2.0
+      - uses: mr-smithers-excellent/docker-build-push@v6
+        name: Build & push Docker image
         with:
-          login: sqa_4a4ae29e1505776d1b336ef2d3ec71f6076bdac6
-          host: http://217.76.49.138:9000
+          image: danielsabana/cualquiercosa
+          tags: ${{ github.sha }}
+          registry: docker.io
+          dockerfile: Dockerfile
+          username: danielsabana
+          password: ${{ secrets.DOCKER_PASSWORD }}
