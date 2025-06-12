@@ -30,6 +30,11 @@ public class SaludoController {
         return "Hola mundo desde un contenedor";
     }
 
+    @GetMapping("/despide")
+    public String despedirse() {
+        return "Fue un gusto";
+    }
+
     @GetMapping("/guardar")
     public String guardar(@RequestParam String nombre) {
         log.info("Guarando estudiante");
